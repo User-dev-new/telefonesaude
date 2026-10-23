@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telefones da Saúde - Tijucas</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1e293b;
+      background-color: #ffffff;
+      padding: 12px;
+    }
+    .container { max-width: 850px; margin: 0 auto; }
+    .busca-box { margin-bottom: 16px; }
+    .input-busca {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 16px;
+      border: 2px solid #cbd5e1;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .input-busca:focus { border-color: #0284c7; }
+    .tabela-wrap {
+      overflow-x: auto;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+    }
+    table { width: 100%; border-collapse: collapse; text-align: left; }
+    thead tr { background-color: #0369a1; color: #ffffff; }
+    th {
+      padding: 12px 14px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 14px;
+    }
+    tbody tr:hover { background-color: #f8fafc; }
+    .link-tel {
+      color: #0284c7;
+      text-decoration: none;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .bairro-col { color: #475569; }
+    .sem-resultado {
+      display: none;
+      text-align: center;
+      padding: 30px 10px;
+      color: #64748b;
+      font-size: 14px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="busca-box">
+    <input 
+      type="text" 
+      id="campoFiltro" 
+      class="input-busca" 
+      placeholder="🔍 Digite unidade, bairro ou telefone..." 
+      autocomplete="off"
+    >
+  </div>
+
+  <div class="tabela-wrap" id="wrapTabela">
+    <table>
+      <thead>
+        <tr>
+          <th>Nome da Unidade</th>
+          <th style="width: 160px;">Bairro</th>
+          <th style="width: 170px;">Contato</th>
+        </tr>
+      </thead>
+      <tbody id="tabelaCorpo">
+        <tr><td>Secretaria Municipal de Saúde de Tijucas</td><td class="bairro-col">Centro</td><td><a class="link-tel" href="tel:4832636606">(48) 3263-6606</a></td></tr>
+        <tr><td>Centro de Especialidades Orlando Barreto</td><td class="bairro-col">Centro</td><td><a class="link-tel" href="tel:4832638800">(48) 3263-8800</a></td></tr>
+        <tr><td>Pronto Atendimento 24h</td><td class="bairro-col">Centro</td><td><a class="link-tel" href="tel:4832638814">(48) 3263-8814</a></td></tr>
+        <tr><td>Centro de Atenção Psicossocial - CAPS I</td><td class="bairro-col">Universitário</td><td><a class="link-tel" href="tel:4832635750">(48) 3263-5750</a></td></tr>
+        <tr><td>Vigilância em Saúde</td><td class="bairro-col">Centro</td><td><a class="link-tel" href="tel:4832637076">(48) 3263-7076</a></td></tr>
+        <tr><td>Centro de Especialidades Odontológicas (CEO)</td><td class="bairro-col">Universitário</td><td><a class="link-tel" href="tel:4832636837">(48) 3263-6837</a></td></tr>
+        <tr><td>Centro Municipal de Promoção a Saúde (CEMPS)</td><td class="bairro-col">Praça</td><td><a class="link-tel" href="tel:4832635757">(48) 3263-5757</a></td></tr>
+        <tr><td>UBS Dona Calina</td><td class="bairro-col">Praça</td><td><a class="link-tel" href="tel:4832630276">(48) 3263-0276</a></td></tr>
+        <tr><td>UBS José Manoel Reis</td><td class="bairro-col">Areias</td><td><a class="link-tel" href="tel:4832636250">(48) 3263-6250</a></td></tr>
+        <tr><td>UBS Renoldo João Rosa</td><td class="bairro-col">Joáia</td><td><a class="link-tel" href="tel:4832635322">(48) 3263-5322</a></td></tr>
+        <tr><td>UBS Marcos Aurélio Laurindo - ESF Centro</td><td class="bairro-col">Centro</td><td><a class="link-tel" href="tel:4832630548">(48) 3263-0548</a></td></tr>
+        <tr><td>UBS Abílio Pereira</td><td class="bairro-col">Santa Luzia</td><td><a class="link-tel" href="tel:4832630159">(48) 3263-0159</a></td></tr>
+        <tr><td>UBS Davi Vieira dos Anjos</td><td class="bairro-col">Sul do Rio</td><td><a class="link-tel" href="tel:4832631141">(48) 3263-1141</a></td></tr>
+        <tr><td>UBS Morretes Maria Margarida Cota</td><td class="bairro-col">Morretes</td><td><a class="link-tel" href="tel:4832200737">(48) 3220-0737</a></td></tr>
+        <tr><td>UBS Rodolfo Francisco Da Veiga</td><td class="bairro-col">Timbé</td><td><a class="link-tel" href="tel:4832637733">(48) 3263-7733</a></td></tr>
+        <tr><td>UBS Doraci Rodrigues Fagundes</td><td class="bairro-col">Itinga</td><td><a class="link-tel" href="tel:4832639117">(48) 3263-9117</a></td></tr>
+        <tr><td>UBS José de Souza e Silva Filho</td><td class="bairro-col">Porto do Itinga</td><td><a class="link-tel" href="tel:4832200736">(48) 3220-0736</a></td></tr>
+        <tr><td>UBS Maria Mafei Orsi</td><td class="bairro-col">Nova Descoberta</td><td><a class="link-tel" href="tel:4832633094">(48) 3263-3094</a></td></tr>
+        <tr><td>UBS Nilton Olinger</td><td class="bairro-col">Campo Novo</td><td><a class="link-tel" href="tel:4832200738">(48) 3220-0738</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="msgVazio" class="sem-resultado">
+    Nenhum contato encontrado.
+  </div>
+</div>
+
+<script>
+  var campo = document.getElementById('campoFiltro');
+  var linhas = document.querySelectorAll('#tabelaCorpo tr');
+  var msg = document.getElementById('msgVazio');
+  var wrap = document.getElementById('wrapTabela');
+
+  function normalizar(texto) {
+    return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
+  campo.addEventListener('input', function() {
+    var termo = normalizar(this.value.trim());
+    var encontrados = 0;
+
+    linhas.forEach(function(linha) {
+      var conteudo = normalizar(linha.textContent);
+      if (conteudo.indexOf(termo) !== -1) {
+        linha.style.display = '';
+        encontrados++;
+      } else {
+        linha.style.display = 'none';
+      }
+    });
+
+    if (encontrados === 0) {
+      msg.style.display = 'block';
+      wrap.style.display = 'none';
+    } else {
+      msg.style.display = 'none';
+      wrap.style.display = 'block';
+    }
+  });
+</script>
+
+</body>
+</html>
